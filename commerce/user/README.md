@@ -19,3 +19,6 @@
 * [Managing Warehouses](./warehouses/README.md)
 
 ## Managing Accounts
+
+## Sales and Marketing
+* [Sales and Marketing](./sales-and-marketing/README.md)
