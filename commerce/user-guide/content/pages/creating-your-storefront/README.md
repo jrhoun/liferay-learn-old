@@ -12,8 +12,8 @@ The following types of pages may be created:
 | Catalog | Main page where customers can search for products and refine their search results. | _Search_, _Specification Facet_, _Category Facet_ and _Search Results_.|
 | Cart | Displays all items in the shopping cart | _Cart_ |
 | Checkout | Displays a summary of all selected goods for purchase | _Checkout_ |
-| Compare | Displays a side by side comparison of the different selected products | _Cart_ |
-| List | Displays the customer's Wish Lists | _Wish Lists_ and _Wish List Contents_ |
+| [Compare](../compare-page/README.md) | Displays a side by side comparison of the different selected products | _Product Comparison Table_ |
+| [Wish Lists](../wish-list-page/README.md) | Displays the customer's Wish Lists | _Wish Lists_ and _Wish List Contents_ |
 | Pending Orders | Displays a list of all pending orders | _Open Carts_ |
 | Placed Orders | Displays a list of all orders in all statuses | _Orders_ |
 | Product Details | Displays information about the product and related products | _Product Details_ and _Product Publisher_ |
