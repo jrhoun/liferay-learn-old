@@ -130,13 +130,13 @@
 #### Commerce Storefront Pages
 
 * Catalog Page
-* Product Detail Page
+* [Product Detail Page](./content/pages/product-details/README.md)
 * Pending Orders Page
 * Placed Orders Page
 * Checkout Page
 * [Account Management](./content/pages/account-management/README.md)
-* Comparison Page
-* Lists Page
+* [Compare Page](./content/pages/compare-page/README.md)
+* [Wish Lists Page](./content/pages/wish-list-page/README.md)
 * Search Page
 * BOM / Spare Parts Finder
 
