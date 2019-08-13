@@ -52,7 +52,7 @@ In this section, we will get an example exchange rate provider up and running on
     STARTED com.acme.f2y1.impl_1.0.0
     ```
 
-1. Verify that the example exchange rate provider was added. Open your browser to `https://localhost:8080` and navigate to _Control Panel_ → _Commerce_ → _Settings_ → _Currencies_ → _Exchange Rate_. On this screen, under the Exchange Rate Provider dropdown, the new exchange rate provider ("Example") will be present.
+1. Verify that the example exchange rate provider was added. Open your browser to `https://localhost:8080` and navigate to _Control Panel_ → _Commerce_ → _Settings_ → _Currencies_ → _Exchange Rate_. The new exchange rate provider ("Example") will be present under the _Exchange Rate Provider_ dropdown.
 
 ![New exchange rate provider](./images/02.png "New exchange rate provider")
 
@@ -62,7 +62,7 @@ Next, let's dive deeper to learn more.
 
 ## Walk Through the Example
 
-In this section, we will take a more in-depth review of the example we deployed. First, we will annotate the class for OSGi registration; second we will implement the `ExchangeRateProvider` interface; and third, we will implement the exchange logic.
+In this section, we will take a more in-depth review of the example we deployed. First, we will annotate the class for OSGi registration; second, we will implement the `ExchangeRateProvider` interface; and third, we will implement the exchange logic.
 
 ### Annotate the Class for OSGi Registration
 
@@ -127,7 +127,7 @@ public BigDecimal getExchangeRate(
 
 > We identify the currencies by their currency codes, which we then compare to a JSON array of currencies to get their respective rates. Finally we perform the calculation and return the result as a `BigDecimal`. While they are less important details for this example, you can also see `_getStaticExchangeRates` and `_getRateForCode` by visiting [F2Y1ExchangeRateProvider.java](./liferay-f2y1.zip/f2y1-impl/src/main/java/com/acme/f2y1/internal/commerce/currency/util/F2Y1ExchangeRateProvider.java).
 >
-> We use the `CommerceCurrency` object for the two currencies to get the information we need, like their currency codes. To find more methods you can use with a `CommerceCurrency` object, see [CommerceCurrency.java](https://github.com/liferay/com-liferay-commerce/blob/2.0.2/commerce-currency-api/src/main/java/com/liferay/commerce/currency/model/CommerceCurrency.java) and [CommerceCurrencyModel.java](https://github.com/liferay/com-liferay-commerce/blob/2.0.2/commerce-currency-api/src/main/java/com/liferay/commerce/currency/model/CommerceCurrencyModel.java).
+> We use the `CommerceCurrency` object for the two currencies to get the information we need, like their currency codes. See [CommerceCurrency.java](https://github.com/liferay/com-liferay-commerce/blob/2.0.2/commerce-currency-api/src/main/java/com/liferay/commerce/currency/model/CommerceCurrency.java) and [CommerceCurrencyModel.java](https://github.com/liferay/com-liferay-commerce/blob/2.0.2/commerce-currency-api/src/main/java/com/liferay/commerce/currency/model/CommerceCurrencyModel.java) to find more methods you can use with a `CommerceCurrency` object.
 
 ## Conclusion
 

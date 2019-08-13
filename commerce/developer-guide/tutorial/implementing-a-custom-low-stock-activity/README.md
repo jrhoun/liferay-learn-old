@@ -54,7 +54,7 @@ In this section, we will get an example low stock activity up and running on you
 
 1. Verify that the example low stock activity was added. Open your browser to `https://localhost:8080` and navigate to _Control Panel_ → _Commerce_ → _Products_. Then, for any product, click _Edit_ within its menu. If necessary, you can add a product to do this with (see [Creating a Simple Product](../../../user-guide/catalog/creating-and-managing-products/product-types/creating-a-simple-product/README.md) for help).
 
-   From there, navigate to _Configuration_. On this screen, under the _Low Stock Action_ dropdown, the new activity ("Log a warning message") will be present.
+   From there, navigate to _Configuration_. The new activity ("Log a warning message") will be present under the _Low Stock Action_ dropdown.
 
 ![New low stock activity](./images/02.png "New low stock activity")
 
@@ -64,7 +64,7 @@ Next, let's dive deeper to learn more.
 
 ## Walk Through the Example
 
-In this section, we will take a more in-depth review of the example we deployed. First, we will annotate the class for OSGi registration; second we will implement the `CommerceLowStockActivity` interface; and third, we will implement the low stock activity logic.
+In this section, we will take a more in-depth review of the example we deployed. First, we will annotate the class for OSGi registration; second, we will implement the `CommerceLowStockActivity` interface; and third, we will implement the low stock activity logic.
 
 ### Annotate the Class for OSGi Registration
 
@@ -100,7 +100,7 @@ public String getKey();
 public String getLabel(Locale locale);
 ```
 
-To better understand each of the required methods mentioned above, let's look at [J1E4CommerceLowStockActivity.java](./liferay-j1e4.zip/j1e4-impl/src/main/java/com/acme/j1e4/internal/commerce/stock/activity/J1E4CommerceLowStockActivity.java). We will review the implementation of each required method in sequence.
+Let's look at [J1E4CommerceLowStockActivity.java](./liferay-j1e4.zip/j1e4-impl/src/main/java/com/acme/j1e4/internal/commerce/stock/activity/J1E4CommerceLowStockActivity.java) to review the implementation of each required method in sequence.
 
 1. ```java
     @Override
@@ -132,7 +132,7 @@ To better understand each of the required methods mentioned above, let's look at
 
     > This returns a text label used to describe the low stock activity. `ResourceBundleUtil` is a Liferay class that provides support for multiple locales.
     >
-    > Note that, for this to work correctly using `LanguageUtil`, we will need to add the language key ourselves. For more information, see [Localizing Your Application](https://help.liferay.com/hc/en-us/articles/360018168251-Localizing-Your-Application).
+    > We will need to add the language key ourselves for it to work correctly using `LanguageUtil`. See [Localizing Your Application](https://help.liferay.com/hc/en-us/articles/360018168251-Localizing-Your-Application) for more information.
 
 ### Create the Low Stock Activity
 
@@ -147,7 +147,7 @@ To implement the low stock activity itself, we only need to add our business log
     }
 ```
 
-> The `cpInstance` object contains information about the item with low stock, that we can use. In our example, we are using it to get the SKU for the item to add to our warning message. To find more methods you can use with a `CPInstance`, see [CPInstance](https://github.com/liferay/com-liferay-commerce/blob/2.0.2/commerce-product-api/src/main/java/com/liferay/commerce/product/model/CPInstance.java) and [CPInstanceModel](https://github.com/liferay/com-liferay-commerce/blob/2.0.2/commerce-product-api/src/main/java/com/liferay/commerce/product/model/CPInstanceModel.java).
+> The `cpInstance` object contains information about the item with low stock, that we can use. In our example, we are using it to get the SKU for the item to add to our warning message. See [CPInstance](https://github.com/liferay/com-liferay-commerce/blob/2.0.2/commerce-product-api/src/main/java/com/liferay/commerce/product/model/CPInstance.java) and [CPInstanceModel](https://github.com/liferay/com-liferay-commerce/blob/2.0.2/commerce-product-api/src/main/java/com/liferay/commerce/product/model/CPInstanceModel.java) to find more methods you can use with a `CPInstance`.
 
 Lastly, define the language key for our activity's label. Add the key and its value to a [Language.properties](./liferay-j1e4.zip/j1e4-impl/src/main/resources/content/Language.properties) file within our module:
 

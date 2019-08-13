@@ -62,7 +62,7 @@ Next, let's dive deeper to learn more.
 
 ## Walk Through the Example
 
-In this section, we will take a more in-depth review of the example we deployed. First, we will annotate the class for OSGi registration; second we will implement the `CommerceTaxEngine` interface; and third, we will implement the tax calculation logic.
+In this section, we will take a more in-depth review of the example we deployed. First, we will annotate the class for OSGi registration; second, we will implement the `CommerceTaxEngine` interface; and third, we will implement the tax calculation logic.
 
 ### Annotate the Class for OSGi Registration
 
@@ -97,7 +97,7 @@ public String getDescription(Locale locale);`
 public String getName(Locale locale);`
 ```
 
-To better understand each of the required methods mentioned above, let's look at [Q4B9CommerceTaxEngine.java](./liferay-q4b9.zip/q4b9-impl/src/main/java/com/acme/q4b9/internal/commerce/tax/Q4B9CommerceTaxEngine.java). We will review the implementation of each required method in sequence.
+Let's look at [Q4B9CommerceTaxEngine.java](./liferay-q4b9.zip/q4b9-impl/src/main/java/com/acme/q4b9/internal/commerce/tax/Q4B9CommerceTaxEngine.java) to review the implementation of each required method in sequence.
 
 1. @Override
     public CommerceTaxValue getCommerceTaxValue(
@@ -124,7 +124,7 @@ To better understand each of the required methods mentioned above, let's look at
 
     > This returns the description of the tax engine as text. `ResourceBundleUtil` is a Liferay class that provides support for multiple locales.
     >
-    > Note that, for this to work correctly using `LanguageUtil`, we will need to add the language key ourselves. For more information, see [Localizing Your Application](https://help.liferay.com/hc/en-us/articles/360018168251-Localizing-Your-Application).
+    > We will need to add the language key ourselves for it to work correctly using `LanguageUtil`. See [Localizing Your Application](https://help.liferay.com/hc/en-us/articles/360018168251-Localizing-Your-Application) for more information.
 
 1. ```java
     @Override
@@ -161,7 +161,7 @@ public CommerceTaxValue getCommerceTaxValue(
 }
 ```
 
-> The `CommerceTaxCalculateRequest` parameter contains information needed for making our calculation. For this example, we use the price from the `CommerceTaxCalculateRequest`, as well as a value indicating whether to apply the rate as a percentage. To see more methods you can use, see [CommerceTaxCalculateRequest.java](https://github.com/liferay/com-liferay-commerce/blob/2.0.2/commerce-api/src/main/java/com/liferay/commerce/tax/CommerceTaxCalculateRequest.java).
+> The `CommerceTaxCalculateRequest` parameter contains information needed for making our calculation. For this example, we use the price from the `CommerceTaxCalculateRequest`, as well as a value indicating whether to apply the rate as a percentage. See [CommerceTaxCalculateRequest.java](https://github.com/liferay/com-liferay-commerce/blob/2.0.2/commerce-api/src/main/java/com/liferay/commerce/tax/CommerceTaxCalculateRequest.java) to find more methods you can use.
 
 ## Conclusion
 

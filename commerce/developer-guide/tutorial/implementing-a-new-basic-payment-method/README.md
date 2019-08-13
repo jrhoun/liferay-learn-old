@@ -62,7 +62,7 @@ Next, let's dive deeper to learn more.
 
 ## Walk Through the Example
 
-In this section, we will take a more in-depth review of the example we deployed. First, we will annotate the class for OSGi registration; second we will implement the `CommercePaymentMethod` interface; and third, we will implement the payment method logic.
+In this section, we will take a more in-depth review of the example we deployed. First, we will annotate the class for OSGi registration; second, we will implement the `CommercePaymentMethod` interface; and third, we will implement the payment method logic.
 
 ### Annotate the Class for OSGi Registration
 
@@ -103,7 +103,7 @@ The following five methods are required:
 	public String getServletPath();
 ```
 
-To better understand each of the required methods mentioned above, let's look at [B1C3CommercePaymentMethod.java](./liferay-b1c3.zip/b1c3-impl/src/main/java/com/acme/b1c3/internal/commerce/payment/method/B1C3CommercePaymentMethod.java). We will review the implementation of each required method in sequence.
+Let's look at [B1C3CommercePaymentMethod.java](./liferay-b1c3.zip/b1c3-impl/src/main/java/com/acme/b1c3/internal/commerce/payment/method/B1C3CommercePaymentMethod.java) to review the implementation of each required method in sequence.
 
 1. ```java
 	@Override
@@ -147,7 +147,7 @@ To better understand each of the required methods mentioned above, let's look at
 	}
     ```
 
-    >This identifies how the payment engine will use a given payment method. In this example, `COMMERCE_PAYMENT_METHOD_TYPE_OFFLINE` informs the payment engine that there are no online processing requirements for this payment method. There are two other payment type constants available out of the box: `COMMERCE_PAYMENT_METHOD_TYPE_ONLINE_STANDARD` and `COMMERCE_PAYMENT_METHOD_TYPE_ONLINE_REDIRECT`. For more information see [Implementing a New Online Payment Method](../implementing-a-new-online-payment-method/README.md).
+    >This identifies how the payment engine will use a given payment method. In this example, `COMMERCE_PAYMENT_METHOD_TYPE_OFFLINE` informs the payment engine that there are no online processing requirements for this payment method. There are two other payment type constants available out of the box: `COMMERCE_PAYMENT_METHOD_TYPE_ONLINE_STANDARD` and `COMMERCE_PAYMENT_METHOD_TYPE_ONLINE_REDIRECT`. See [Implementing a New Online Payment Method](../implementing-a-new-online-payment-method/README.md) for more information on online payment methods.
 
 1. ```java
 	@Override
@@ -156,7 +156,7 @@ To better understand each of the required methods mentioned above, let's look at
 	}
     ```
 
-    >When implementing an online payment method, a servlet may be required to enable proper interfacing with an external payment provider. Since no servlet path is required for an offline payment method, `getServletPath` should return `null`.
+    >A servlet may be required when implementing an online payment method to enable proper interfacing with an external payment provider. Since no servlet path is required for an offline payment method, `getServletPath` should return `null`.
 
 ### Create the Payment Method
 
@@ -169,7 +169,7 @@ public boolean isCompleteEnabled() {
 }
 ```
 
->For the payment method to complete payments, this must return true. `completePayment` is invoked when the payment is fulfilled. This informs the payment engine what functionality is supported by our payment method.
+>This method must return true for the payment method to complete payments. `completePayment` is invoked when the payment is fulfilled. This informs the payment engine what functionality is supported by our payment method.
 
 ```java
 @Override
@@ -184,7 +184,7 @@ public CommercePaymentResult completePayment(
 }
 ```
 
->This is where custom payment logic will be implemented.  `CommercePaymentResult` is a container that stores information relevant to the completion of a payment process. For more information see [CommercePaymentResult.java](https://github.com/liferay/com-liferay-commerce/blob/2.0.2/commerce-api/src/main/java/com/liferay/commerce/payment/result/CommercePaymentResult.java).
+>This is where custom payment logic will be implemented.  `CommercePaymentResult` is a container that stores information relevant to the completion of a payment process. See [CommercePaymentResult.java](https://github.com/liferay/com-liferay-commerce/blob/2.0.2/commerce-api/src/main/java/com/liferay/commerce/payment/result/CommercePaymentResult.java) for more information.
 
 ```java
 @Override
@@ -193,7 +193,7 @@ public boolean isProcessPaymentEnabled() {
 }
 ```
 
->For the payment method to process payments, this must return true. `processPayment` is the initial step that is executed when a customer submits an order. This informs the payment engine what functionality is supported by our payment method.
+>This must return true for the payment method to process payments. `processPayment` is the initial step that is executed when a customer submits an order. This informs the payment engine what functionality is supported by our payment method.
 
 ```java
 @Override
@@ -208,7 +208,7 @@ public CommercePaymentResult processPayment(
 }
 ```
 
->This is where custom payment logic will be implemented. This `CommercePaymentResult` should store information relevant to the processing of a payment. For more information see [CommercePaymentResult.java](https://github.com/liferay/com-liferay-commerce/blob/2.0.2/commerce-api/src/main/java/com/liferay/commerce/payment/result/CommercePaymentResult.java)
+>This is where custom payment logic will be implemented. This `CommercePaymentResult` should store information relevant to the processing of a payment. See [CommercePaymentResult.java](https://github.com/liferay/com-liferay-commerce/blob/2.0.2/commerce-api/src/main/java/com/liferay/commerce/payment/result/CommercePaymentResult.java) for more information.
 
 Lastly, define the language key for our payment method's name and description. Add the keys and their values to a [Language.properties](./liferay-b1c3.zip/b1c3-impl/src/main/resources/content/Language.properties) file within our module:
 
