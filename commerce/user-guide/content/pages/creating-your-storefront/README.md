@@ -24,3 +24,4 @@ The following types of pages may be created:
 
 * [Widget Reference Guide](../widget-reference/README.md)
 * [Creating Pages](https://help.liferay.com/hc/en-us/articles/360018171291-Creating-Pages)
+* [Creating a Catalog Page](../creating-a-catalog-page/README.md)

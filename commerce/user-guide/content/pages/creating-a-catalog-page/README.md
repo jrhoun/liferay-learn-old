@@ -1,8 +1,17 @@
-# Creating a Catalog Page Without Using an Accelerator
+# Creating a Catalog Page
 
-The [Catalog](../catalog/README.md) page is the primary entry point for users to browse and navigate through products that are being offered in a store. It requires the following widgets: _Search Bar_, _Options Facets_, _Specification Facet_, _Category Facet_ and _Search Results_. To learn more about those widgets see the [Widget Reference](../widget-reference/README.md).
+The [Catalog](../catalog/README.md) page is the primary entry point for users to browse products that are being offered in a store. It includes the following widgets: _Search Bar_, _Options Facets_, _Specification Facet_, _Category Facet_ and _Search Results_. To learn more about Commerce widgets see the [Widget Reference](../widget-reference/README.md).
 
 This article documents how to build a Catalog page without the use of an [accelerator](../../../getting-started/accelerators/README.md).
+
+## Overview
+
+1. Review the Prerequisites.
+1. Add and Configure the Page.
+1. Add the Widgets to the Page.
+1. Configure the _Search Bar_ Widget.
+1. Display Full Catalog Without a Search (Optional).
+1. Configure Product Channel Filters (Optional).
 
 ## Prerequisites
 
@@ -13,7 +22,21 @@ See the following links to learn more about Site and Page Creation:
 * [Creating and Managing Navigation Menus](https://help.liferay.com/hc/en-us/articles/360018171531-Creating-and-Managing-Navigation-Menus)
 * [Using Application Display Templates](https://help.liferay.com/hc/en-us/articles/360017892632-Styling-Widgets-with-Application-Display-Templates)
 
-A basic Catalog page might look like this:
+## Add and Configure the Page
+
+ > Tips and Suggestions
+
+1. Create a Page using the _Widget_ template.
+1. The _30-70 Column_ Layout is the default selection. This layout has a narrower left column for the widgets that refine the search and a wider right column for the _Search Results_ widget. Storefront designers can choose different layouts for a different style.
+
+## Add the Widgets to the Page
+
+ > Tips and Suggestions
+
+1. Drag and drop the widgets into position after they appear on the page.
+1. Click the _3-dot icon_ then _Look and Feel Configurations_ to add or remove the widget's title.
+
+After creating and configuring the page with the widgets, a basic Catalog page might look like this:
 
 ![Blank Catalog Page](./images/02.png)
 
@@ -34,7 +57,7 @@ The _Search Bar_ widget must be configured to display data from the Global scope
 
 The _Search Bar_ widget is now configured to display the content from the entire instance.
 
-## Display Full Catalog Without a Search
+## Display Full Catalog Without a Search (Optional)
 
 Liferay Commerce allows store managers to display all the products in a catalog in the _Search Results_ widget without having buyers first enter a search query. This is done by configuring the _Search Options_ widget.
 
@@ -47,9 +70,9 @@ Once this option has been enabled, all the products in this catalog are displaye
 
 ![Empty Search](./images/01.png)
 
-## Configure Product Channel Filters
+## Configure Product Channel Filters (Optional)
 
-If there are more thant one store site that is housed on the Liferay Commerce instance, the entire catalog becomes searchable on every store site.
+If there are more than one store site that is housed on the Liferay Commerce instance, the entire catalog becomes searchable on every store site.
 
 To restrict a product so that it is found only on one site, enable the filter [channels](../../../catalog/creating-and-managing-products/channels/introduction-to-channels/README.md) for each product.
 
