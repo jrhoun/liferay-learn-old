@@ -1,4 +1,4 @@
-# Platform Fundamentals
+# Platform
 
 ## Customizations / Extension Points
 

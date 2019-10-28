@@ -18,7 +18,7 @@ Build something quick with DXP.
 
 ## [User and System Management](./user-and-system-management/README.md)
 
-## [Platform Fundamentals](./platform-fundamentals/README.md)
+## [Platform](./platform/README.md)
 
 ## [Headless Delivery](./headless-delivery/README.md)
 
