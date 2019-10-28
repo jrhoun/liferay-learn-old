@@ -19,7 +19,7 @@
     * Adding the UAD Framework to a Service Builder Application
     * Enhancing the Data Erasure UI
     * Filtering and Searching UAD*Marked Entities
-* APIs 
+* APIs
 
 ## Securing Liferay
 
@@ -30,7 +30,7 @@
 
 ### Using an SSO with Liferay DXP
 
-* Token*Based Authentication
+* Token-Based Authentication
 * Using OpenID Connect
 * Using SAML
 * Using OpenAM
