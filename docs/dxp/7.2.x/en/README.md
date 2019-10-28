@@ -18,13 +18,13 @@ Build something quick with DXP.
 
 ## [User and System Management](./user-and-system-management/README.md)
 
-## [Installation and Upgrades](./installation-and-upgrades/README.md)
-
-Set up and maintain Liferay DXP for the long haul.
-
 ## [Platform Fundamentals](./platform-fundamentals/README.md)
 
 ## [Headless Delivery](./headless-delivery/README.md)
+
+## [Installation and Upgrades](./installation-and-upgrades/README.md)
+
+Set up and maintain Liferay DXP for the long haul.
 
 ## Get Help
 
